@@ -6,19 +6,20 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class BookRepository {
    HashMap<Integer,Book> db;
-   int id;
+   int bookid;
     public BookRepository(){
 
         this.db = new HashMap<>();
-        this.id = 1;
+        this.bookid=0;
+
     }
 
     public Book save(Book book){
 
+       this.bookid++;
+       book.setId(bookid);
+       db.put(bookid,book);
 
-       book.setId(id);
-       db.put(id,book);
-       id++;
         return book;
     }
 
@@ -36,7 +37,9 @@ public class BookRepository {
     }
 
     public void deleteBookById(int id){
+
         db.remove(id);
+        this.bookid--;
 
     }
 
