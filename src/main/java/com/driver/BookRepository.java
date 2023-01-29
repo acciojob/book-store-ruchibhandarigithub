@@ -6,12 +6,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class BookRepository {
    HashMap<Integer,Book> db;
+   int id;
     public BookRepository(){
+
         this.db = new HashMap<>();
+        this.id = 0;
     }
 
     public Book save(Book book){
-       int id = book.getId();
+
+       id++;
+       book.setId(id);
        db.put(id,book);
         return book;
     }
