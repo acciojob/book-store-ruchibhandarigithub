@@ -10,14 +10,15 @@ public class BookRepository {
     public BookRepository(){
 
         this.db = new HashMap<>();
-        this.id = 0;
+        this.id = 1;
     }
 
     public Book save(Book book){
 
-       id++;
+
        book.setId(id);
        db.put(id,book);
+       id++;
         return book;
     }
 
