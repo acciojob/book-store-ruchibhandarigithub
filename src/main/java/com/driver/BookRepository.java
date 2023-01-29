@@ -31,13 +31,11 @@ public class BookRepository {
 
     public void deleteBookById(int id){
         db.remove(id);
-        return;
+
     }
 
     public void deleteAll(){
-        for(int id : db.keySet()){
-            db.remove(id);
-        }
+       db.clear();
 
     }
 
