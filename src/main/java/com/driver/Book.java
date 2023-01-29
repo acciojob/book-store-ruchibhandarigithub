@@ -20,6 +20,12 @@ public class Book {
           this.genre = genre;
           this.author = author;
      }
+     public Book( String name, String genre, String author) {
+          this.id =0git gig;
+          this.name = name;
+          this.genre = genre;
+          this.author = author;
+     }
 
      public int getId() {
           return id;
